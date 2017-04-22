@@ -1,0 +1,1429 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/racker/node-elementtree"
+
+    >elementtree (v0.1.7)</a>
+</h1>
+<h4>XML Serialization and Parsing module based on Python's ElementTree.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.elementtree">module elementtree</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.CData">
+            function <span class="apidocSignatureSpan">elementtree.</span>CData
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.Comment">
+            function <span class="apidocSignatureSpan">elementtree.</span>Comment
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.Element">
+            function <span class="apidocSignatureSpan">elementtree.</span>Element
+            <span class="apidocSignatureSpan">(tag, attrib)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.ElementTree">
+            function <span class="apidocSignatureSpan">elementtree.</span>ElementTree
+            <span class="apidocSignatureSpan">(element)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.PI">
+            function <span class="apidocSignatureSpan">elementtree.</span>PI
+            <span class="apidocSignatureSpan">(target, text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.ProcessingInstruction">
+            function <span class="apidocSignatureSpan">elementtree.</span>ProcessingInstruction
+            <span class="apidocSignatureSpan">(target, text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.QName">
+            function <span class="apidocSignatureSpan">elementtree.</span>QName
+            <span class="apidocSignatureSpan">(text_or_uri, tag)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.SubElement">
+            function <span class="apidocSignatureSpan">elementtree.</span>SubElement
+            <span class="apidocSignatureSpan">(parent, tag, attrib)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.XML">
+            function <span class="apidocSignatureSpan">elementtree.</span>XML
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.parse">
+            function <span class="apidocSignatureSpan">elementtree.</span>parse
+            <span class="apidocSignatureSpan">(source, parser)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.register_namespace">
+            function <span class="apidocSignatureSpan">elementtree.</span>register_namespace
+            <span class="apidocSignatureSpan">(prefix, uri)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.tostring">
+            function <span class="apidocSignatureSpan">elementtree.</span>tostring
+            <span class="apidocSignatureSpan">(element, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">elementtree.</span>ElementPath</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">elementtree.</span>ElementTree.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">elementtree.</span>QName.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">elementtree.</span>errors</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">elementtree.</span>parser</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">elementtree.</span>sax</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">elementtree.</span>sprintf</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">elementtree.</span>treebuilder</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">elementtree.</span>utils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.elementtree.ElementPath">module elementtree.ElementPath</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.ElementPath.find">
+            function <span class="apidocSignatureSpan">elementtree.ElementPath.</span>find
+            <span class="apidocSignatureSpan">(element, path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.ElementPath.findall">
+            function <span class="apidocSignatureSpan">elementtree.ElementPath.</span>findall
+            <span class="apidocSignatureSpan">(elem, path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.ElementPath.findtext">
+            function <span class="apidocSignatureSpan">elementtree.ElementPath.</span>findtext
+            <span class="apidocSignatureSpan">(element, path, defvalue)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.elementtree.ElementTree">module elementtree.ElementTree</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.ElementTree.ElementTree">
+            function <span class="apidocSignatureSpan">elementtree.</span>ElementTree
+            <span class="apidocSignatureSpan">(element)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.elementtree.ElementTree.prototype">module elementtree.ElementTree.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.ElementTree.prototype._setroot">
+            function <span class="apidocSignatureSpan">elementtree.ElementTree.prototype.</span>_setroot
+            <span class="apidocSignatureSpan">(element)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.ElementTree.prototype.find">
+            function <span class="apidocSignatureSpan">elementtree.ElementTree.prototype.</span>find
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.ElementTree.prototype.findall">
+            function <span class="apidocSignatureSpan">elementtree.ElementTree.prototype.</span>findall
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.ElementTree.prototype.findtext">
+            function <span class="apidocSignatureSpan">elementtree.ElementTree.prototype.</span>findtext
+            <span class="apidocSignatureSpan">(path, defvalue)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.ElementTree.prototype.getroot">
+            function <span class="apidocSignatureSpan">elementtree.ElementTree.prototype.</span>getroot
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.ElementTree.prototype.iter">
+            function <span class="apidocSignatureSpan">elementtree.ElementTree.prototype.</span>iter
+            <span class="apidocSignatureSpan">(tag, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.ElementTree.prototype.parse">
+            function <span class="apidocSignatureSpan">elementtree.ElementTree.prototype.</span>parse
+            <span class="apidocSignatureSpan">(source, parser)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.ElementTree.prototype.write">
+            function <span class="apidocSignatureSpan">elementtree.ElementTree.prototype.</span>write
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.elementtree.QName">module elementtree.QName</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.QName.QName">
+            function <span class="apidocSignatureSpan">elementtree.</span>QName
+            <span class="apidocSignatureSpan">(text_or_uri, tag)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.elementtree.QName.prototype">module elementtree.QName.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.QName.prototype.toString">
+            function <span class="apidocSignatureSpan">elementtree.QName.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.elementtree.errors">module elementtree.errors</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.errors.SyntaxError">
+            function <span class="apidocSignatureSpan">elementtree.errors.</span>SyntaxError
+            <span class="apidocSignatureSpan">(token, msg)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.elementtree.parser">module elementtree.parser</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.parser.get_parser">
+            function <span class="apidocSignatureSpan">elementtree.parser.</span>get_parser
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.elementtree.sax">module elementtree.sax</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.sax.XMLParser">
+            function <span class="apidocSignatureSpan">elementtree.sax.</span>XMLParser
+            <span class="apidocSignatureSpan">(target)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.elementtree.sprintf">module elementtree.sprintf</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.sprintf.sprintf">
+            function <span class="apidocSignatureSpan">elementtree.</span>sprintf
+            <span class="apidocSignatureSpan">(formatter, var_args)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.elementtree.treebuilder">module elementtree.treebuilder</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.treebuilder.TreeBuilder">
+            function <span class="apidocSignatureSpan">elementtree.treebuilder.</span>TreeBuilder
+            <span class="apidocSignatureSpan">(element_factory)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.elementtree.utils">module elementtree.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.utils.findall">
+            function <span class="apidocSignatureSpan">elementtree.utils.</span>findall
+            <span class="apidocSignatureSpan">(re, str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.utils.items">
+            function <span class="apidocSignatureSpan">elementtree.utils.</span>items
+            <span class="apidocSignatureSpan">(hash, ignored)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.elementtree.utils.merge">
+            function <span class="apidocSignatureSpan">elementtree.utils.</span>merge
+            <span class="apidocSignatureSpan">(a, b)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.elementtree" id="apidoc.module.elementtree">module elementtree</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.CData" id="apidoc.element.elementtree.CData">
+        function <span class="apidocSignatureSpan">elementtree.</span>CData
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CData(text) {
+  var element = new Element(CData);
+  if (text) {
+    element.text = text;
+  }
+  return element;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.Comment" id="apidoc.element.elementtree.Comment">
+        function <span class="apidocSignatureSpan">elementtree.</span>Comment
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Comment(text) {
+  var element = new Element(Comment);
+  if (text) {
+    element.text = text;
+  }
+  return element;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.Element" id="apidoc.element.elementtree.Element">
+        function <span class="apidocSignatureSpan">elementtree.</span>Element
+        <span class="apidocSignatureSpan">(tag, attrib)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Element = function (tag, attrib) {
+  return new Element(tag, attrib);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.ElementTree" id="apidoc.element.elementtree.ElementTree">
+        function <span class="apidocSignatureSpan">elementtree.</span>ElementTree
+        <span class="apidocSignatureSpan">(element)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ElementTree(element)
+{
+  this._root = element;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.PI" id="apidoc.element.elementtree.PI">
+        function <span class="apidocSignatureSpan">elementtree.</span>PI
+        <span class="apidocSignatureSpan">(target, text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ProcessingInstruction(target, text)
+{
+  var element = new Element(ProcessingInstruction);
+  element.text = target;
+  if (text) {
+    element.text = element.text + &#x22; &#x22; + text;
+  }
+  return element;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.ProcessingInstruction" id="apidoc.element.elementtree.ProcessingInstruction">
+        function <span class="apidocSignatureSpan">elementtree.</span>ProcessingInstruction
+        <span class="apidocSignatureSpan">(target, text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ProcessingInstruction(target, text)
+{
+  var element = new Element(ProcessingInstruction);
+  element.text = target;
+  if (text) {
+    element.text = element.text + &#x22; &#x22; + text;
+  }
+  return element;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.QName" id="apidoc.element.elementtree.QName">
+        function <span class="apidocSignatureSpan">elementtree.</span>QName
+        <span class="apidocSignatureSpan">(text_or_uri, tag)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function QName(text_or_uri, tag)
+{
+  if (tag) {
+    text_or_uri = sprintf(&#x22;{%s}%s&#x22;, text_or_uri, tag);
+  }
+  this.text = text_or_uri;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.SubElement" id="apidoc.element.elementtree.SubElement">
+        function <span class="apidocSignatureSpan">elementtree.</span>SubElement
+        <span class="apidocSignatureSpan">(parent, tag, attrib)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SubElement(parent, tag, attrib) {
+  var element = parent.makeelement(tag, attrib);
+  parent.append(element);
+  return element;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.XML" id="apidoc.element.elementtree.XML">
+        function <span class="apidocSignatureSpan">elementtree.</span>XML
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">XML = function (data) {
+  var et = new ElementTree();
+  return et.parse(data);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.parse" id="apidoc.element.elementtree.parse">
+        function <span class="apidocSignatureSpan">elementtree.</span>parse
+        <span class="apidocSignatureSpan">(source, parser)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parse(source, parser) {
+  var tree = new ElementTree();
+  tree.parse(source, parser);
+  return tree;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var ElementTree = et.ElementTree;
+var element = et.Element;
+var subElement = et.SubElement;
+
+var data, etree;
+
+data = fs.readFileSync(&#x27;document.xml&#x27;).toString();
+etree = et.<span class="apidocCodeKeywordSpan">parse</span>(data);
+
+console.log(etree.findall(&#x27;./entry/TenantId&#x27;).length); // 2
+console.log(etree.findtext(&#x27;./entry/ServiceName&#x27;)); // MaaS
+console.log(etree.findall(&#x27;./entry/category&#x27;)[0].get(&#x27;term&#x27;)); // monitoring.entity.create
+console.log(etree.findall(&#x27;*/category/[@term=&#x22;monitoring.entity.update&#x22;]&#x27;).length); // 1
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.register_namespace" id="apidoc.element.elementtree.register_namespace">
+        function <span class="apidocSignatureSpan">elementtree.</span>register_namespace
+        <span class="apidocSignatureSpan">(prefix, uri)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function register_namespace(prefix, uri) {
+  if (/ns\d+$/.test(prefix)) {
+    throw new Error(&#x27;Prefix format reserved for internal use&#x27;);
+  }
+
+  if (_namespace_map.hasOwnProperty(uri) &#x26;&#x26; _namespace_map[uri] === prefix) {
+    delete _namespace_map[uri];
+  }
+
+  _namespace_map[uri] = prefix;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.tostring" id="apidoc.element.elementtree.tostring">
+        function <span class="apidocSignatureSpan">elementtree.</span>tostring
+        <span class="apidocSignatureSpan">(element, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function tostring(element, options) {
+  return new ElementTree(element).write(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.elementtree.ElementPath" id="apidoc.module.elementtree.ElementPath">module elementtree.ElementPath</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.ElementPath.find" id="apidoc.element.elementtree.ElementPath.find">
+        function <span class="apidocSignatureSpan">elementtree.ElementPath.</span>find
+        <span class="apidocSignatureSpan">(element, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function find(element, path) {
+  var resultElements = findall(element, path);
+
+  if (resultElements &#x26;&#x26; resultElements.length &#x3e; 0) {
+    return resultElements[0];
+  }
+
+  return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.ElementPath.findall" id="apidoc.element.elementtree.ElementPath.findall">
+        function <span class="apidocSignatureSpan">elementtree.ElementPath.</span>findall
+        <span class="apidocSignatureSpan">(elem, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function findall(elem, path) {
+  var selector, result, i, len, token, value, select, context;
+
+  if (_cache.hasOwnProperty(path)) {
+    selector = _cache[path];
+  }
+  else {
+    // TODO: Use smarter cache purging approach
+    if (Object.keys(_cache).length &#x3e; 100) {
+      _cache = {};
+    }
+
+    if (path.charAt(0) === &#x27;/&#x27;) {
+      throw new SyntaxError(null, &#x27;Cannot use absolute path on element&#x27;);
+    }
+
+    result = xpath_tokenizer(path);
+    selector = [];
+
+    function getToken() {
+      return result.shift();
+    }
+
+    token = getToken();
+    while (true) {
+      var c = token[1] || &#x27;&#x27;;
+      value = ops[c](getToken, token);
+
+      if (!value) {
+        throw new SyntaxError(null, sprintf(&#x27;Invalid path: %s&#x27;, path));
+      }
+
+      selector.push(value);
+      token = getToken();
+
+      if (!token) {
+        break;
+      }
+      else if (token[1] === &#x27;/&#x27;) {
+        token = getToken();
+      }
+
+      if (!token) {
+        break;
+      }
+    }
+
+    _cache[path] = selector;
+  }
+
+  // Execute slector pattern
+  result = [elem];
+  context = new _SelectorContext(elem);
+
+  for (i = 0, len = selector.length; i &#x3c; len; i++) {
+    select = selector[i];
+    result = select(context, result);
+  }
+
+  return result || [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var subElement = et.SubElement;
+
+var data, etree;
+
+data = fs.readFileSync(&#x27;document.xml&#x27;).toString();
+etree = et.parse(data);
+
+console.log(etree.<span class="apidocCodeKeywordSpan">findall</span>(&#x27;./entry/TenantId&#x27;).length); // 2
+console.log(etree.findtext(&#x27;./entry/ServiceName&#x27;)); // MaaS
+console.log(etree.findall(&#x27;./entry/category&#x27;)[0].get(&#x27;term&#x27;)); // monitoring.entity.create
+console.log(etree.findall(&#x27;*/category/[@term=&#x22;monitoring.entity.update&#x22;]&#x27;).length); // 1
+```
+
+Build status
+====================
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.ElementPath.findtext" id="apidoc.element.elementtree.ElementPath.findtext">
+        function <span class="apidocSignatureSpan">elementtree.ElementPath.</span>findtext
+        <span class="apidocSignatureSpan">(element, path, defvalue)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function findtext(element, path, defvalue) {
+  var resultElements = findall(element, path);
+
+  if (resultElements &#x26;&#x26; resultElements.length &#x3e; 0) {
+    return resultElements[0].text;
+  }
+
+  return defvalue;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var data, etree;
+
+data = fs.readFileSync(&#x27;document.xml&#x27;).toString();
+etree = et.parse(data);
+
+console.log(etree.findall(&#x27;./entry/TenantId&#x27;).length); // 2
+console.log(etree.<span class="apidocCodeKeywordSpan">findtext</span>(&#x27;./entry/ServiceName&#x27;)); // MaaS
+console.log(etree.findall(&#x27;./entry/category&#x27;)[0].get(&#x27;term&#x27;)); // monitoring.entity.create
+console.log(etree.findall(&#x27;*/category/[@term=&#x22;monitoring.entity.update&#x22;]&#x27;).length); // 1
+```
+
+Build status
+====================
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.elementtree.ElementTree" id="apidoc.module.elementtree.ElementTree">module elementtree.ElementTree</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.ElementTree.ElementTree" id="apidoc.element.elementtree.ElementTree.ElementTree">
+        function <span class="apidocSignatureSpan">elementtree.</span>ElementTree
+        <span class="apidocSignatureSpan">(element)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ElementTree(element)
+{
+  this._root = element;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.elementtree.ElementTree.prototype" id="apidoc.module.elementtree.ElementTree.prototype">module elementtree.ElementTree.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.ElementTree.prototype._setroot" id="apidoc.element.elementtree.ElementTree.prototype._setroot">
+        function <span class="apidocSignatureSpan">elementtree.ElementTree.prototype.</span>_setroot
+        <span class="apidocSignatureSpan">(element)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_setroot = function (element) {
+  this._root = element;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.ElementTree.prototype.find" id="apidoc.element.elementtree.ElementTree.prototype.find">
+        function <span class="apidocSignatureSpan">elementtree.ElementTree.prototype.</span>find
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">find = function (path) {
+  return this._root.find(path);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.ElementTree.prototype.findall" id="apidoc.element.elementtree.ElementTree.prototype.findall">
+        function <span class="apidocSignatureSpan">elementtree.ElementTree.prototype.</span>findall
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">findall = function (path) {
+  return this._root.findall(path);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var subElement = et.SubElement;
+
+var data, etree;
+
+data = fs.readFileSync(&#x27;document.xml&#x27;).toString();
+etree = et.parse(data);
+
+console.log(etree.<span class="apidocCodeKeywordSpan">findall</span>(&#x27;./entry/TenantId&#x27;).length); // 2
+console.log(etree.findtext(&#x27;./entry/ServiceName&#x27;)); // MaaS
+console.log(etree.findall(&#x27;./entry/category&#x27;)[0].get(&#x27;term&#x27;)); // monitoring.entity.create
+console.log(etree.findall(&#x27;*/category/[@term=&#x22;monitoring.entity.update&#x22;]&#x27;).length); // 1
+```
+
+Build status
+====================
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.ElementTree.prototype.findtext" id="apidoc.element.elementtree.ElementTree.prototype.findtext">
+        function <span class="apidocSignatureSpan">elementtree.ElementTree.prototype.</span>findtext
+        <span class="apidocSignatureSpan">(path, defvalue)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">findtext = function (path, defvalue) {
+  return this._root.findtext(path, defvalue);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var data, etree;
+
+data = fs.readFileSync(&#x27;document.xml&#x27;).toString();
+etree = et.parse(data);
+
+console.log(etree.findall(&#x27;./entry/TenantId&#x27;).length); // 2
+console.log(etree.<span class="apidocCodeKeywordSpan">findtext</span>(&#x27;./entry/ServiceName&#x27;)); // MaaS
+console.log(etree.findall(&#x27;./entry/category&#x27;)[0].get(&#x27;term&#x27;)); // monitoring.entity.create
+console.log(etree.findall(&#x27;*/category/[@term=&#x22;monitoring.entity.update&#x22;]&#x27;).length); // 1
+```
+
+Build status
+====================
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.ElementTree.prototype.getroot" id="apidoc.element.elementtree.ElementTree.prototype.getroot">
+        function <span class="apidocSignatureSpan">elementtree.ElementTree.prototype.</span>getroot
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getroot = function () {
+  return this._root;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.ElementTree.prototype.iter" id="apidoc.element.elementtree.ElementTree.prototype.iter">
+        function <span class="apidocSignatureSpan">elementtree.ElementTree.prototype.</span>iter
+        <span class="apidocSignatureSpan">(tag, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">iter = function (tag, callback) {
+  this._root.iter(tag, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.ElementTree.prototype.parse" id="apidoc.element.elementtree.ElementTree.prototype.parse">
+        function <span class="apidocSignatureSpan">elementtree.ElementTree.prototype.</span>parse
+        <span class="apidocSignatureSpan">(source, parser)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function (source, parser) {
+  if (!parser) {
+    parser = get_parser(constants.DEFAULT_PARSER);
+    parser = new parser.XMLParser(new TreeBuilder());
+  }
+
+  parser.feed(source);
+  this._root = parser.close();
+  return this._root;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var ElementTree = et.ElementTree;
+var element = et.Element;
+var subElement = et.SubElement;
+
+var data, etree;
+
+data = fs.readFileSync(&#x27;document.xml&#x27;).toString();
+etree = et.<span class="apidocCodeKeywordSpan">parse</span>(data);
+
+console.log(etree.findall(&#x27;./entry/TenantId&#x27;).length); // 2
+console.log(etree.findtext(&#x27;./entry/ServiceName&#x27;)); // MaaS
+console.log(etree.findall(&#x27;./entry/category&#x27;)[0].get(&#x27;term&#x27;)); // monitoring.entity.create
+console.log(etree.findall(&#x27;*/category/[@term=&#x22;monitoring.entity.update&#x22;]&#x27;).length); // 1
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.ElementTree.prototype.write" id="apidoc.element.elementtree.ElementTree.prototype.write">
+        function <span class="apidocSignatureSpan">elementtree.ElementTree.prototype.</span>write
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (options) {
+  var sb = [];
+  options = utils.merge({
+    encoding: &#x27;utf-8&#x27;,
+    xml_declaration: null,
+    default_namespace: null,
+    method: &#x27;xml&#x27;}, options);
+
+  if (options.xml_declaration !== false) {
+    sb.push(&#x22;&#x3c;?xml version=&#x27;1.0&#x27; encoding=&#x27;&#x22;+options.encoding +&#x22;&#x27;?&#x3e;\n&#x22;);
+  }
+
+  if (options.method === &#x22;text&#x22;) {
+    _serialize_text(sb, self._root, encoding);
+  }
+  else {
+    var qnames, namespaces, indent, indent_string;
+    var x = _namespaces(this._root, options.encoding, options.default_namespace);
+    qnames = x[0];
+    namespaces = x[1];
+
+    if (options.hasOwnProperty(&#x27;indent&#x27;)) {
+      indent = 0;
+      indent_string = new Array(options.indent + 1).join(&#x27; &#x27;);
+    }
+    else {
+      indent = false;
+    }
+
+    if (options.method === &#x22;xml&#x22;) {
+      _serialize_xml(function(data) {
+        sb.push(data);
+      }, this._root, options.encoding, qnames, namespaces, indent, indent_string);
+    }
+    else {
+<span class="apidocCodeCommentSpan">      /* TODO: html */
+</span>      throw new Error(&#x22;unknown serialization method &#x22;+ options.method);
+    }
+  }
+
+  return sb.join(&#x22;&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+startTime = subElement(root, &#x27;StartTime&#x27;);
+startTime.text = date;
+
+resourceName = subElement(root, &#x27;ResourceName&#x27;);
+resourceName.text = &#x27;entity&#x27;;
+
+etree = new ElementTree(root);
+xml = etree.<span class="apidocCodeKeywordSpan">write</span>({&#x27;xml_declaration&#x27;: false});
+console.log(xml);
+```
+
+As you can see, both et.Element and et.SubElement are factory methods which
+return a new instance of Element and SubElement class, respectively.
+When you create a new element (tag) you can use set method to set an attribute.
+To set the tag value, assign a value to the .text attribute.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.elementtree.QName" id="apidoc.module.elementtree.QName">module elementtree.QName</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.QName.QName" id="apidoc.element.elementtree.QName.QName">
+        function <span class="apidocSignatureSpan">elementtree.</span>QName
+        <span class="apidocSignatureSpan">(text_or_uri, tag)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function QName(text_or_uri, tag)
+{
+  if (tag) {
+    text_or_uri = sprintf(&#x22;{%s}%s&#x22;, text_or_uri, tag);
+  }
+  this.text = text_or_uri;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.elementtree.QName.prototype" id="apidoc.module.elementtree.QName.prototype">module elementtree.QName.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.QName.prototype.toString" id="apidoc.element.elementtree.QName.prototype.toString">
+        function <span class="apidocSignatureSpan">elementtree.QName.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+  return this.text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var XML = et.XML;
+var ElementTree = et.ElementTree;
+var element = et.Element;
+var subElement = et.SubElement;
+
+var data, etree;
+
+data = fs.readFileSync(&#x27;document.xml&#x27;).<span class="apidocCodeKeywordSpan">toString</span>();
+etree = et.parse(data);
+
+console.log(etree.findall(&#x27;./entry/TenantId&#x27;).length); // 2
+console.log(etree.findtext(&#x27;./entry/ServiceName&#x27;)); // MaaS
+console.log(etree.findall(&#x27;./entry/category&#x27;)[0].get(&#x27;term&#x27;)); // monitoring.entity.create
+console.log(etree.findall(&#x27;*/category/[@term=&#x22;monitoring.entity.update&#x22;]&#x27;).length); // 1
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.elementtree.errors" id="apidoc.module.elementtree.errors">module elementtree.errors</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.errors.SyntaxError" id="apidoc.element.elementtree.errors.SyntaxError">
+        function <span class="apidocSignatureSpan">elementtree.errors.</span>SyntaxError
+        <span class="apidocSignatureSpan">(token, msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SyntaxError(token, msg) {
+  msg = msg || sprintf(&#x27;Syntax Error at token %s&#x27;, token.toString());
+  this.token = token;
+  this.message = msg;
+  Error.call(this, msg);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.elementtree.parser" id="apidoc.module.elementtree.parser">module elementtree.parser</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.parser.get_parser" id="apidoc.element.elementtree.parser.get_parser">
+        function <span class="apidocSignatureSpan">elementtree.parser.</span>get_parser
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function get_parser(name) {
+  if (name === &#x27;sax&#x27;) {
+    return parsers.sax;
+  }
+  else {
+    throw new Error(&#x27;Invalid parser: &#x27; + name);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.elementtree.sax" id="apidoc.module.elementtree.sax">module elementtree.sax</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.sax.XMLParser" id="apidoc.element.elementtree.sax.XMLParser">
+        function <span class="apidocSignatureSpan">elementtree.sax.</span>XMLParser
+        <span class="apidocSignatureSpan">(target)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function XMLParser(target) {
+  this.parser = sax.parser(true);
+
+  this.target = (target) ? target : new TreeBuilder();
+
+  this.parser.onopentag = this._handleOpenTag.bind(this);
+  this.parser.ontext = this._handleText.bind(this);
+  this.parser.oncdata = this._handleCdata.bind(this);
+  this.parser.ondoctype = this._handleDoctype.bind(this);
+  this.parser.oncomment = this._handleComment.bind(this);
+  this.parser.onclosetag = this._handleCloseTag.bind(this);
+  this.parser.onerror = this._handleError.bind(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.elementtree.sprintf" id="apidoc.module.elementtree.sprintf">module elementtree.sprintf</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.sprintf.sprintf" id="apidoc.element.elementtree.sprintf.sprintf">
+        function <span class="apidocSignatureSpan">elementtree.</span>sprintf
+        <span class="apidocSignatureSpan">(formatter, var_args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sprintf = function (formatter, var_args) {
+  if (!cache[formatter]) {
+    populate(formatter);
+  }
+
+  return cache[formatter].apply(null, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.elementtree.treebuilder" id="apidoc.module.elementtree.treebuilder">module elementtree.treebuilder</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.treebuilder.TreeBuilder" id="apidoc.element.elementtree.treebuilder.TreeBuilder">
+        function <span class="apidocSignatureSpan">elementtree.treebuilder.</span>TreeBuilder
+        <span class="apidocSignatureSpan">(element_factory)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function TreeBuilder(element_factory) {
+  this._data = [];
+  this._elem = [];
+  this._last = null;
+  this._tail = null;
+  if (!element_factory) {
+<span class="apidocCodeCommentSpan">    /* evil circular dep */
+</span>    element_factory = require(&#x27;./elementtree&#x27;).Element;
+  }
+  this._factory = element_factory;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.elementtree.utils" id="apidoc.module.elementtree.utils">module elementtree.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.utils.findall" id="apidoc.element.elementtree.utils.findall">
+        function <span class="apidocSignatureSpan">elementtree.utils.</span>findall
+        <span class="apidocSignatureSpan">(re, str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function findall(re, str) {
+  var match, matches = [];
+
+  while ((match = re.exec(str))) {
+      matches.push(match);
+  }
+
+  return matches;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var subElement = et.SubElement;
+
+var data, etree;
+
+data = fs.readFileSync(&#x27;document.xml&#x27;).toString();
+etree = et.parse(data);
+
+console.log(etree.<span class="apidocCodeKeywordSpan">findall</span>(&#x27;./entry/TenantId&#x27;).length); // 2
+console.log(etree.findtext(&#x27;./entry/ServiceName&#x27;)); // MaaS
+console.log(etree.findall(&#x27;./entry/category&#x27;)[0].get(&#x27;term&#x27;)); // monitoring.entity.create
+console.log(etree.findall(&#x27;*/category/[@term=&#x22;monitoring.entity.update&#x22;]&#x27;).length); // 1
+```
+
+Build status
+====================
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.utils.items" id="apidoc.element.elementtree.utils.items">
+        function <span class="apidocSignatureSpan">elementtree.utils.</span>items
+        <span class="apidocSignatureSpan">(hash, ignored)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function items(hash, ignored) {
+  ignored = ignored || null;
+  var k, rv = [];
+
+  function is_ignored(key) {
+    if (!ignored || ignored.length === 0) {
+      return false;
+    }
+
+    return ignored.indexOf(key);
+  }
+
+  for (k in hash) {
+    if (hash.hasOwnProperty(k) &#x26;&#x26; !(is_ignored(ignored))) {
+      rv.push([k, hash[k]]);
+    }
+  }
+
+  return rv;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.elementtree.utils.merge" id="apidoc.element.elementtree.utils.merge">
+        function <span class="apidocSignatureSpan">elementtree.utils.</span>merge
+        <span class="apidocSignatureSpan">(a, b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function merge(a, b) {
+  var c = {}, attrname;
+
+  for (attrname in a) {
+    if (a.hasOwnProperty(attrname)) {
+      c[attrname] = a[attrname];
+    }
+  }
+  for (attrname in b) {
+    if (b.hasOwnProperty(attrname)) {
+      c[attrname] = b[attrname];
+    }
+  }
+  return c;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
